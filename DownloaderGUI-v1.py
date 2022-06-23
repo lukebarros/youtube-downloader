@@ -18,7 +18,9 @@ def Downloader():
     url = YouTube(str(link.get()))
     video = url.streams.get_highest_resolution()
     video.download(path.get())
-    Label(root, text = 'Download efetuado com sucesso', font = 'arial 15').place(x= 110 , y = 250) 
+    Label(root, text = 'Download efetuado com sucesso', font = 'arial 15').place(x= 110 , y = 250)
+    link.set("")
+    path.set("")
 
 Button(root,text = 'DOWNLOAD', font = 'arial 11 bold' ,bg = 'light cyan', padx = 2, command = Downloader).place(x=180 ,y = 190)
 root.mainloop()
